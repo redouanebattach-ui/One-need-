@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#172b4d">
+<meta name="description" content="ONE NEED — Un besoin, un suivi, une réalisation.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>ONE NEED — Gestion des besoins</title>
+<style>
+:root{--navy:#172b4d;--navy2:#223d67;--bg:#f4f6fa;--card:#fff;--text:#1e293b;--muted:#64748b;--line:#e2e8f0;--blue:#315b96;--green:#16845b;--amber:#b7791f;--red:#b93838}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:14px/1.45 Inter,Segoe UI,Arial,sans-serif;color:var(--text)}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh;display:grid;grid-template-columns:245px 1fr}.sidebar{background:var(--navy);color:#fff;padding:24px 16px;display:flex;flex-direction:column;gap:24px}.brand{display:flex;gap:11px;align-items:center;padding:0 8px}.brandmark{width:38px;height:38px;border-radius:12px;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:900;font-size:18px}.brandname{font-weight:800;font-size:19px;letter-spacing:1.5px}.brandtag{font-size:11px;color:#b8c6dc}.navlabel{font-size:10px;color:#9db0ca;text-transform:uppercase;letter-spacing:1.4px;padding:0 12px}.nav{display:grid;gap:6px}.nav button{border:0;background:transparent;color:#d7e0ee;text-align:left;padding:11px 12px;border-radius:9px;display:flex;gap:12px;align-items:center}.nav button.active,.nav button:hover{background:#2c456b;color:white}.nav .ico{width:18px;text-align:center}.sidebottom{margin-top:auto;color:#aab9ce;font-size:11px;padding:12px}.main{min-width:0}.topbar{height:72px;background:white;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 30px;gap:16px}.crumb{font-size:12px;color:var(--muted)}.toptitle{font-size:18px;font-weight:750}.topright{display:flex;align-items:center;gap:12px}.pill{font-size:11px;background:#eef2f8;border-radius:20px;padding:6px 10px;color:var(--navy2)}.avatar{width:34px;height:34px;border-radius:50%;background:#dbe5f3;color:var(--navy);display:grid;place-items:center;font-weight:800}.content{padding:28px 30px;max-width:1500px;margin:auto}.welcome{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:22px}.welcome h1{margin:0 0 6px;font-size:25px;letter-spacing:-.4px}.welcome p{margin:0;color:var(--muted)}.btn{border:1px solid var(--line);background:#fff;border-radius:9px;padding:10px 14px;color:var(--text);font-weight:650}.btn.primary{background:var(--navy2);border-color:var(--navy2);color:#fff}.btn.ghost{background:transparent}.btn.small{padding:6px 9px;font-size:12px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-bottom:22px}.metric{background:white;border:1px solid var(--line);border-radius:13px;padding:18px}.metrichead{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}.metricicon{width:32px;height:32px;border-radius:9px;background:#eef2f8;display:grid;place-items:center;color:var(--navy2)}.metricnum{font-size:29px;font-weight:800;margin:12px 0 3px}.metricsub{font-size:11px;color:var(--muted)}.layout2{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(300px,.9fr);gap:16px}.panel{background:white;border:1px solid var(--line);border-radius:13px;padding:19px;margin-bottom:16px;min-width:0}.panelhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}.panelhead h2{font-size:15px;margin:0}.panelhead p{margin:4px 0 0;color:var(--muted);font-size:12px}.linkbtn{border:0;background:transparent;color:var(--blue);font-weight:700;font-size:12px}.barrow{display:grid;grid-template-columns:110px 1fr 38px;gap:10px;align-items:center;margin:13px 0;font-size:12px}.bar{height:8px;border-radius:8px;background:#edf1f6;overflow:hidden}.bar>span{height:100%;display:block;background:#456ca3;border-radius:8px}.barrow strong{text-align:right;font-size:12px}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:640px}th{text-align:left;background:#f8fafc;color:#64748b;font-size:10px;text-transform:uppercase;letter-spacing:.7px;padding:11px 12px;border-bottom:1px solid var(--line)}td{padding:12px;border-bottom:1px solid #edf0f5;font-size:12px}tr:last-child td{border-bottom:0}.ref{font-weight:800;color:var(--navy2)}.status{display:inline-block;padding:4px 8px;border-radius:20px;font-size:10px;font-weight:750;white-space:nowrap}.s-sub{background:#e8effb;color:#315b96}.s-progress{background:#fff2d7;color:#946200}.s-part{background:#e9e2fb;color:#6845a4}.s-done{background:#dff5e9;color:#16764f}.s-draft{background:#edf0f4;color:#64748b}.quickgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick{border:1px solid var(--line);border-radius:10px;padding:13px;text-align:left;background:white}.quick:hover{border-color:#a9bad4;background:#f9fbff}.quick .qicon{font-size:20px;margin-bottom:8px}.quick strong{display:block;font-size:12px}.quick span{font-size:11px;color:var(--muted)}.section{display:none}.section.active{display:block}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:15px}.filters input,.filters select{min-width:140px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}.field label{font-size:12px;font-weight:700;color:#475569}.field input,.field select,.field textarea,.filters input,.filters select{border:1px solid #d7dee9;border-radius:8px;padding:10px 11px;background:white;color:var(--text);width:100%}.field textarea{min-height:80px;resize:vertical}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}.full{grid-column:1/-1}.hint{color:var(--muted);font-size:11px;margin-top:4px}.agencybox{border:1px solid var(--line);border-radius:9px;padding:12px;background:#fafbfd}.agencyrow{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid #edf0f5}.agencyrow:last-child{border:0}.agencyrow input{width:auto}.agencydetails{font-size:11px;color:var(--muted);margin-left:auto}.empty{padding:28px;text-align:center;color:var(--muted)}.notice{padding:12px 14px;border-radius:9px;background:#fff7e6;color:#8a5c00;font-size:12px;margin-bottom:16px}.toast{position:fixed;right:24px;bottom:24px;background:#172b4d;color:white;padding:13px 18px;border-radius:10px;box-shadow:0 10px 30px #0002;display:none;z-index:10}.progress{height:7px;background:#e8edf4;border-radius:10px;overflow:hidden}.progress span{display:block;height:100%;background:#315b96}.tag{background:#f0f4f9;color:#405570;padding:4px 7px;border-radius:6px;font-size:10px}.footer{font-size:11px;color:#8490a3;text-align:right;margin-top:8px}
+@media(max-width:1000px){.app{grid-template-columns:205px 1fr}.cards{grid-template-columns:repeat(2,1fr)}.layout2{grid-template-columns:1fr}.content{padding:22px}.topbar{padding:0 22px}}
+@media(max-width:680px){.app{display:block}.sidebar{padding:12px;gap:12px}.brand{padding:4px}.navlabel,.sidebottom{display:none}.nav{grid-template-columns:repeat(3,1fr)}.nav button{justify-content:center;padding:9px 4px;font-size:11px}.nav button .ico{display:none}.topbar{height:62px;padding:0 14px}.content{padding:16px}.welcome{display:block}.welcome .btn{margin-top:12px}.cards{gap:8px}.metric{padding:12px}.metricnum{font-size:24px}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.topright .pill{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brandmark">N</div><div><div class="brandname">ONE NEED</div><div class="brandtag">Un besoin, un suivi, une réalisation.</div></div></div>
+  <div class="navlabel">Espace de travail</div>
+  <nav class="nav">
+    <button class="active" data-page="dashboard"><span class="ico">▦</span> Tableau de bord</button>
+    <button data-page="new"><span class="ico">＋</span> Nouveau besoin</button>
+    <button data-page="needs"><span class="ico">☷</span> Suivi des besoins</button>
+    <button data-page="budgets"><span class="ico">◫</span> Quotas & budgets</button>
+    <button data-page="settings"><span class="ico">⚙</span> Paramètres</button>
+  </nav>
+  <div class="sidebottom">Prototype MVP · Version 0.1<br>Environnement de test local</div>
+</aside>
+<main class="main">
+<header class="topbar"><div><div class="crumb">ONE NEED / <span id="crumb">Vue d'ensemble</span></div><div class="toptitle" id="pageTitle">Tableau de bord</div></div><div class="topright"><span class="pill">MODE DÉMO</span><div class="avatar">AD</div></div></header>
+<div class="content">
+<section id="dashboard" class="section active">
+  <div class="welcome"><div><h1>Bonjour 👋</h1><p>Voici la situation des besoins et des réalisations.</p></div><button class="btn primary" onclick="showPage('new')">＋ Créer un besoin</button></div>
+  <div class="notice"><strong>Prototype de test :</strong> les données sont enregistrées dans ce navigateur. Utilise des données fictives uniquement.</div>
+  <div class="cards">
+    <div class="metric"><div class="metrichead">Besoins enregistrés <span class="metricicon">☷</span></div><div class="metricnum" id="mTotal">4</div><div class="metricsub">Tous statuts confondus</div></div>
+    <div class="metric"><div class="metrichead">En cours <span class="metricicon">◷</span></div><div class="metricnum" id="mProgress">1</div><div class="metricsub">Traitement en cours</div></div>
+    <div class="metric"><div class="metrichead">Réalisés <span class="metricicon">✓</span></div><div class="metricnum" id="mDone">1</div><div class="metricsub">Besoins clôturés</div></div>
+    <div class="metric"><div class="metrichead">Agences concernées <span class="metricicon">⌖</span></div><div class="metricnum" id="mAgencies">4</div><div class="metricsub">Sur les demandes enregistrées</div></div>
+  </div>
+  <div class="layout2">
+    <div>
+      <div class="panel"><div class="panelhead"><div><h2>Derniers besoins</h2><p>Vue rapide sur les demandes récentes</p></div><button class="linkbtn" onclick="showPage('needs')">Voir tout →</button></div><div class="tablewrap"><table><thead><tr><th>Référence</th><th>Domaine / type</th><th>Agence(s)</th><th>Statut</th></tr></thead><tbody id="recentRows"></tbody></table></div></div>
+      <div class="panel"><div class="panelhead"><div><h2>Répartition des quotas par région</h2><p>Illustration basée sur la clé de répartition proposée</p></div><span class="tag">Hypothèse</span></div><div id="regionBars"></div></div>
+    </div>
+    <div>
+      <div class="panel"><div class="panelhead"><div><h2>Actions rapides</h2><p>Accéder aux fonctions principales</p></div></div><div class="quickgrid">
+        <button class="quick" onclick="showPage('new')"><div class="qicon">📝</div><strong>Saisir un besoin</strong><span>Créer une demande</span></button>
+        <button class="quick" onclick="showPage('needs')"><div class="qicon">🔎</div><strong>Suivre les demandes</strong><span>Consulter les statuts</span></button>
+        <button class="quick" onclick="showPage('budgets')"><div class="qicon">📊</div><strong>Voir les quotas</strong><span>Répartition régionale</span></button>
+        <button class="quick" onclick="exportCSV()"><div class="qicon">📥</div><strong>Exporter les données</strong><span>Format CSV compatible Excel</span></button>
+      </div></div>
+      <div class="panel"><div class="panelhead"><div><h2>Parcours d'un besoin</h2><p>Cycle de vie simplifié</p></div></div>
+        <div style="display:grid;gap:13px">
+          <div style="display:flex;gap:10px"><span class="status s-draft">1</span><div><strong>Brouillon</strong><div class="hint">Saisie en préparation</div></div></div>
+          <div style="display:flex;gap:10px"><span class="status s-sub">2</span><div><strong>Soumis</strong><div class="hint">Demande envoyée par la région</div></div></div>
+          <div style="display:flex;gap:10px"><span class="status s-progress">3</span><div><strong>En cours de traitement</strong><div class="hint">Prise en charge par le métier</div></div></div>
+          <div style="display:flex;gap:10px"><span class="status s-part">4</span><div><strong>Partiellement réalisé</strong><div class="hint">Au moins une agence traitée</div></div></div>
+          <div style="display:flex;gap:10px"><span class="status s-done">5</span><div><strong>Réalisé / clôturé</strong><div class="hint">Toutes les agences sont réalisées</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="new" class="section">
+  <div class="welcome"><div><h1>Créer un besoin</h1><p>Renseigne les informations nécessaires à la prise en charge.</p></div></div>
+  <div class="panel">
+    <form id="needForm">
+      <div class="formgrid">
+        <div class="field"><label for="domain">Domaine *</label><select id="domain" required><option value="Logistique">Logistique</option><option value="Informatique">Informatique</option><option value="Sécurité">Sécurité</option><option value="Archives">Archives</option></select></div>
+        <div class="field" id="projectField"><label for="project">Projet *</label><select id="project" required><option>Investissement</option><option>Maintenance</option></select></div>
+        <div class="field"><label for="type">Type de besoin *</label><select id="type" required></select></div>
+        <div class="field"><label for="region">Région *</label><select id="region" required><option>Casablanca</option><option>Rabat</option><option>Fès</option><option>Marrakech</option><option>Oujda</option><option>Agadir</option><option>Tanger</option></select></div>
+        <div class="field full"><label>Agence(s) concernée(s) *</label><div class="hint" style="margin-bottom:7px">Choisis une ou plusieurs agences de démonstration. Le référentiel complet sera importé dans une prochaine étape.</div><div class="agencybox" id="agencyChoices"></div><div class="hint" id="selectedCount">0 agence sélectionnée</div></div>
+        <div class="field full"><label for="comment">Commentaire (facultatif)</label><textarea id="comment" placeholder="Précisions utiles pour le traitement…"></textarea></div>
+        <div class="field"><label for="delay">Délai de référence (jours)</label><input id="delay" type="number" min="1" value="30"></div>
+        <div class="field"><label for="targetDate">Date prévisionnelle de réalisation</label><input id="targetDate" type="date"></div>
+        <div class="field full"><label for="attachments">Pièces jointes (facultatif)</label><input id="attachments" type="file" multiple><div class="hint">Dans ce prototype, les fichiers ne sont pas téléversés vers un serveur. Ne joins aucun document confidentiel.</div></div>
+      </div>
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:8px"><button type="button" class="btn" onclick="resetForm()">Réinitialiser</button><button type="submit" class="btn primary">Soumettre le besoin →</button></div>
+    </form>
+  </div>
+</section>
+
+<section id="needs" class="section">
+  <div class="welcome"><div><h1>Suivi des besoins</h1><p>Consulte les demandes et fais évoluer leur statut pour tester le parcours.</p></div><button class="btn primary" onclick="showPage('new')">＋ Nouveau besoin</button></div>
+  <div class="panel"><div class="filters"><input id="search" placeholder="Rechercher une référence, agence…" oninput="renderNeeds()"><select id="filterDomain" onchange="renderNeeds()"><option value="">Tous les domaines</option><option>Logistique</option><option>Informatique</option><option>Sécurité</option><option>Archives</option></select><select id="filterStatus" onchange="renderNeeds()"><option value="">Tous les statuts</option><option>Brouillon</option><option>Soumis</option><option>En cours de traitement</option><option>Partiellement réalisé</option><option>Réalisé / clôturé</option></select><button class="btn" onclick="exportCSV()">Exporter CSV ↓</button></div><div class="tablewrap"><table><thead><tr><th>Référence</th><th>Créé le</th><th>Domaine / type</th><th>Projet</th><th>Région</th><th>Agence(s)</th><th>Statut / action</th></tr></thead><tbody id="allRows"></tbody></table></div><div class="footer">Les changements de statut sont simulés localement.</div></div>
+</section>
+
+<section id="budgets" class="section">
+  <div class="welcome"><div><h1>Quotas & budgets</h1><p>Clé de répartition proposée par région, à confirmer avant toute utilisation réelle.</p></div></div>
+  <div class="notice">La première version utilise une unité de quota en <strong>nombre d’agences</strong>, pas un montant financier. La logique d’allocation exacte et les règles d’arrondi devront être validées avant de figer le fonctionnement.</div>
+  <div class="panel"><div class="panelhead"><div><h2>Répartition régionale</h2><p>Pourcentage du quota global</p></div></div><div id="budgetBars"></div></div>
+  <div class="panel"><div class="panelhead"><div><h2>Paramètres de démonstration</h2><p>Modifie le quota global pour voir la répartition calculée.</p></div></div><div class="formgrid"><div class="field"><label for="globalQuota">Quota global (nombre d’agences)</label><input type="number" id="globalQuota" min="0" value="100"></div><div class="field"><label for="budgetProject">Périmètre</label><select id="budgetProject"><option>Logistique — Investissement</option><option>Logistique — Maintenance</option><option>Informatique</option><option>Sécurité</option><option>Archives</option></select></div></div><button class="btn primary" onclick="renderBudgets()">Recalculer la répartition</button><div class="hint">Méthode d’arrondi provisoire : arrondi au plus proche, puis ajustement pour conserver exactement le total global.</div></div>
+</section>
+
+<section id="settings" class="section">
+  <div class="welcome"><div><h1>Paramètres</h1><p>Référentiels et règles de gestion du prototype.</p></div></div>
+  <div class="panel"><div class="panelhead"><div><h2>Référentiel des types de besoins</h2><p>Les listes sont configurées selon les règles communiquées.</p></div></div><div id="catalogue"></div></div>
+  <div class="panel"><div class="panelhead"><div><h2>Fonctions à développer ensuite</h2></div></div><ul style="margin:0;padding-left:20px;line-height:2"><li>Import du fichier Excel officiel des agences (codes conservés comme texte).</li><li>Profils et droits d'accès (administrateur, régions, managers SM BDME, métiers).</li><li>Demande de modification / annulation avec validation par le métier.</li><li>Réalisation agence par agence et calcul automatique du statut global.</li><li>Journal d'audit : qui a fait quoi et quand.</li><li>Authentification, base de données et sauvegardes.</li></ul></div>
+  <div class="panel"><div class="panelhead"><div><h2>Réinitialiser les données de démonstration</h2><p>Supprime les demandes créées dans ce navigateur et recharge les exemples.</p></div><button class="btn" onclick="resetDemo()">Réinitialiser la démo</button></div></div>
+</section>
+</div>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+const types = {
+ "Logistique": {
+  "Investissement":["Réaménagements Lights","Réaménagements Lourds","Transferts Définitifs","Transformation en DAM","Créations Agences Retail","Créations SE ou CA","DAM Externe","SBA","Création poste Commercial","Compartiments Coffres clients","Espace LSB"],
+  "Maintenance":["Climatisation & Aération","Plomberie","Sanitaire","Espace de vie","Peinture","Ponçage & Lustrage","Locaux techniques & électricité","Signalétique","Stores","Retapage mobilier (meuble)","Retapage Chaises","Ondulateurs & Stabilisateurs","Destructeurs papiers","Habillage GAB","Étanchéité"]
+ },
+ "Informatique":{"Général":["PC","Imprimantes"]},
+ "Sécurité":{"Général":["Compteuses Billets","Équipement Sécurité"]},
+ "Archives":{"Général":["Demande de ramassage des archives pour destruction","Demande de ramassage pour transfert"]}
+};
+const agencies=[
+ {code:"0001",name:"Agence Démo — Anfa",region:"Casablanca",network:"Retail",group:"Casa Centre"},
+ {code:"0002",name:"Agence Démo — Ain Sebaa",region:"Casablanca",network:"Retail",group:"Casa Nord"},
+ {code:"0101",name:"Agence Démo — Agdal",region:"Rabat",network:"Retail",group:"Rabat Centre"},
+ {code:"0201",name:"Agence Démo — Fès Ville",region:"Fès",network:"Retail",group:"Fès Centre"},
+ {code:"0301",name:"Agence Démo — Guéliz",region:"Marrakech",network:"Retail",group:"Marrakech Centre"},
+ {code:"0401",name:"Agence Démo — Oujda",region:"Oujda",network:"Retail",group:"Oujda Centre"},
+ {code:"0501",name:"Agence Démo — Agadir",region:"Agadir",network:"Retail",group:"Agadir Centre"},
+ {code:"0601",name:"Agence Démo — Tanger",region:"Tanger",network:"Retail",group:"Tanger Centre"}
+];
+const regionShares=[["Casablanca",30],["Rabat",13],["Fès",11],["Marrakech",15],["Oujda",10],["Agadir",10],["Tanger",11]];
+const seed=[
+ {id:"ON-2026-0001",created:"2026-10-02",domain:"Logistique",project:"Maintenance",type:"Climatisation & Aération",region:"Casablanca",agencyCodes:["0002"],comment:"Exemple de démonstration",delay:30,target:"2026-11-01",status:"En cours de traitement"},
+ {id:"ON-2026-0002",created:"2026-10-03",domain:"Informatique",project:"—",type:"Imprimantes",region:"Rabat",agencyCodes:["0101"],comment:"",delay:15,target:"2026-10-18",status:"Soumis"},
+ {id:"ON-2026-0003",created:"2026-10-04",domain:"Logistique",project:"Investissement",type:"Réaménagements Lights",region:"Fès",agencyCodes:["0201"],comment:"",delay:45,target:"2026-11-18",status:"Réalisé / clôturé"},
+ {id:"ON-2026-0004",created:"2026-10-05",domain:"Archives",project:"—",type:"Demande de ramassage pour transfert",region:"Tanger",agencyCodes:["0601"],comment:"",delay:10,target:"2026-10-15",status:"Brouillon"}
+];
+let needs=[];
+try{needs=JSON.parse(localStorage.getItem("oneNeedMvpData")||"null")||structuredClone(seed)}catch(e){needs=seed.map(x=>({...x}))}
+function save(){localStorage.setItem("oneNeedMvpData",JSON.stringify(needs))}
+function toast(msg){let t=document.getElementById("toast");t.textContent=msg;t.style.display="block";setTimeout(()=>t.style.display="none",2600)}
+function showPage(page){document.querySelectorAll(".section").forEach(s=>s.classList.toggle("active",s.id===page));document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));const titles={dashboard:["Tableau de bord","Vue d'ensemble"],new:["Nouveau besoin","Création d'un besoin"],needs:["Suivi des besoins","Demandes"],budgets:["Quotas & budgets","Pilotage"],settings:["Paramètres","Administration"]};document.getElementById("pageTitle").textContent=titles[page][0];document.getElementById("crumb").textContent=titles[page][1];if(page==="needs")renderNeeds();if(page==="dashboard")renderDashboard()}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+function statusClass(s){if(s==="Soumis")return"s-sub";if(s==="En cours de traitement")return"s-progress";if(s==="Partiellement réalisé")return"s-part";if(s==="Réalisé / clôturé")return"s-done";return"s-draft"}
+function agencyName(code){return agencies.find(a=>a.code===code)?.name||code}
+function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderDashboard(){
+ document.getElementById("mTotal").textContent=needs.length;
+ document.getElementById("mProgress").textContent=needs.filter(n=>n.status==="En cours de traitement"||n.status==="Partiellement réalisé").length;
+ document.getElementById("mDone").textContent=needs.filter(n=>n.status==="Réalisé / clôturé").length;
+ document.getElementById("mAgencies").textContent=needs.reduce((s,n)=>s+n.agencyCodes.length,0);
+ document.getElementById("recentRows").innerHTML=needs.slice().reverse().slice(0,5).map(n=>`<tr><td class="ref">${escapeHtml(n.id)}</td><td>${escapeHtml(n.domain)}<div class="hint">${escapeHtml(n.type)}</div></td><td>${n.agencyCodes.length} agence(s)</td><td><span class="status ${statusClass(n.status)}">${escapeHtml(n.status)}</span></td></tr>`).join("")||'<tr><td colspan="4" class="empty">Aucun besoin enregistré.</td></tr>';
+ document.getElementById("regionBars").innerHTML=regionShares.map(([r,p])=>`<div class="barrow"><span>${r}</span><div class="bar"><span style="width:${p/30*100}%"></span></div><strong>${p}%</strong></div>`).join("");
+}
+function renderNeeds(){
+ let q=(document.getElementById("search")?.value||"").toLowerCase(),d=document.getElementById("filterDomain")?.value||"",s=document.getElementById("filterStatus")?.value||"";
+ let filtered=needs.filter(n=>(!d||n.domain===d)&&(!s||n.status===s)&&(`${n.id} ${n.type} ${n.region} ${n.agencyCodes.map(agencyName).join(" ")}`.toLowerCase().includes(q)));
+ document.getElementById("allRows").innerHTML=filtered.map(n=>`<tr><td class="ref">${escapeHtml(n.id)}</td><td>${escapeHtml(n.created)}</td><td>${escapeHtml(n.domain)}<div class="hint">${escapeHtml(n.type)}</div></td><td>${escapeHtml(n.project)}</td><td>${escapeHtml(n.region)}</td><td>${n.agencyCodes.map(agencyName).map(escapeHtml).join("<br>")}</td><td><span class="status ${statusClass(n.status)}">${escapeHtml(n.status)}</span><div style="margin-top:6px"><select class="statusSelect" data-id="${n.id}" aria-label="Modifier statut" style="max-width:180px;padding:5px;border:1px solid #d7dee9;border-radius:6px;font-size:11px"><option ${n.status==="Brouillon"?"selected":""}>Brouillon</option><option ${n.status==="Soumis"?"selected":""}>Soumis</option><option ${n.status==="En cours de traitement"?"selected":""}>En cours de traitement</option><option ${n.status==="Partiellement réalisé"?"selected":""}>Partiellement réalisé</option><option ${n.status==="Réalisé / clôturé"?"selected":""}>Réalisé / clôturé</option></select></div></td></tr>`).join("")||'<tr><td colspan="7" class="empty">Aucun résultat pour ces filtres.</td></tr>';
+ document.querySelectorAll(".statusSelect").forEach(sel=>sel.addEventListener("change",e=>{let n=needs.find(x=>x.id===e.target.dataset.id);if(n){n.status=e.target.value;save();renderNeeds();renderDashboard();toast("Statut mis à jour.")}}))
+}
+function refreshTypes(){let d=document.getElementById("domain").value,p=document.getElementById("project").value;let isLog=d==="Logistique";document.getElementById("projectField").style.display=isLog?"flex":"none";document.getElementById("project").required=isLog;let list=types[d][isLog?p:"Général"]||[];document.getElementById("type").innerHTML=list.map(t=>`<option>${escapeHtml(t)}</option>`).join("")}
+function renderAgencyChoices(){let region=document.getElementById("region").value;document.getElementById("agencyChoices").innerHTML=agencies.filter(a=>a.region===region).map(a=>`<label class="agencyrow"><input type="checkbox" value="${a.code}" class="agencyCheck"><span><strong>${escapeHtml(a.code)}</strong> — ${escapeHtml(a.name)}</span><span class="agencydetails">${escapeHtml(a.network)} · ${escapeHtml(a.group)}</span></label>`).join("")||'<div class="hint">Aucune agence de démonstration pour cette région.</div>';document.querySelectorAll(".agencyCheck").forEach(c=>c.addEventListener("change",updateSelected))}
+function updateSelected(){let n=document.querySelectorAll(".agencyCheck:checked").length;document.getElementById("selectedCount").textContent=`${n} agence${n>1?"s":""} sélectionnée${n>1?"s":""}`}
+document.getElementById("domain").addEventListener("change",refreshTypes);document.getElementById("project").addEventListener("change",refreshTypes);document.getElementById("region").addEventListener("change",renderAgencyChoices);
+function resetForm(){document.getElementById("needForm").reset();refreshTypes();renderAgencyChoices();updateSelected()}
+document.getElementById("needForm").addEventListener("submit",e=>{e.preventDefault();let selected=[...document.querySelectorAll(".agencyCheck:checked")].map(c=>c.value);if(!selected.length){toast("Sélectionne au moins une agence.");return}let domain=document.getElementById("domain").value;let id="ON-"+new Date().getFullYear()+"-"+String(Math.max(0,...needs.map(n=>Number(n.id.split("-").pop())||0))+1).padStart(4,"0");let item={id,created:new Date().toISOString().slice(0,10),domain,project:domain==="Logistique"?document.getElementById("project").value:"—",type:document.getElementById("type").value,region:document.getElementById("region").value,agencyCodes:selected,comment:document.getElementById("comment").value,delay:Number(document.getElementById("delay").value)||30,target:document.getElementById("targetDate").value,status:"Soumis"};needs.push(item);save();resetForm();renderDashboard();toast("Besoin "+id+" créé et soumis.");showPage("needs")});
+function distribute(total){let raw=regionShares.map(([name,p])=>({name,p,val:total*p/100,base:Math.floor(total*p/100),frac:(total*p/100)%1}));let remain=total-raw.reduce((s,x)=>s+x.base,0);raw.slice().sort((a,b)=>b.frac-a.frac).slice(0,remain).forEach(x=>x.base++);return raw}
+function renderBudgets(){let total=Math.max(0,Number(document.getElementById("globalQuota").value)||0),items=distribute(total);let html=items.map(x=>`<div class="barrow" style="grid-template-columns:110px 1fr 70px"><span>${x.name}</span><div><div class="bar"><span style="width:${x.p/30*100}%"></span></div><div class="hint">${x.p}% du quota global</div></div><strong>${x.base}</strong></div>`).join("");document.getElementById("budgetBars").innerHTML=html+`<div style="border-top:1px solid var(--line);padding-top:12px;display:flex;justify-content:space-between"><strong>Total réparti</strong><strong>${items.reduce((s,x)=>s+x.base,0)} / ${total}</strong></div>`}
+function renderCatalogue(){let out=[];for(let [d,projects] of Object.entries(types)){out.push(`<h3 style="font-size:13px;margin:16px 0 8px">${d}</h3>`);for(let [p,ts] of Object.entries(projects)){out.push(`<div style="margin:8px 0"><span class="tag">${p}</span><div class="hint" style="margin-top:6px;line-height:1.9">${ts.map(escapeHtml).join(" · ")}</div></div>`)}}document.getElementById("catalogue").innerHTML=out.join("")}
+function exportCSV(){let rows=[["Référence","Date création","Domaine","Projet","Type","Région","Codes agences","Agences","Commentaire","Délai référence (jours)","Date prévisionnelle","Statut"],...needs.map(n=>[n.id,n.created,n.domain,n.project,n.type,n.region,n.agencyCodes.join(";"),n.agencyCodes.map(agencyName).join(";"),n.comment,n.delay,n.target,n.status])];let csv="\ufeff"+rows.map(r=>r.map(v=>`"${String(v??"").replace(/"/g,'""')}"`).join(";")).join("\r\n");let blob=new Blob([csv],{type:"text/csv;charset=utf-8;"});let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="ONE_NEED_export.csv";a.click();URL.revokeObjectURL(a.href);toast("Export CSV préparé.")}
+function resetDemo(){if(confirm("Supprimer les demandes de test et recharger les exemples ?")){needs=structuredClone(seed);save();renderDashboard();renderNeeds();toast("Données de démonstration réinitialisées.")}}
+refreshTypes();renderAgencyChoices();renderDashboard();renderNeeds();renderBudgets();renderCatalogue();
+</script>
+<script>
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js").catch(() => {}));
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+ONE NEED — PWA MVP 0.1
+Application web responsive pour iPhone et ordinateur.
+
+CONTENU
+- index.html : interface et logique du prototype
+- manifest.webmanifest : paramètres d'installation PWA
+- service-worker.js : cache pour permettre la réouverture hors connexion après le premier chargement
+- icon-192.png et icon-512.png : icônes d'application
+
+IMPORTANT
+Une PWA installable doit être servie depuis une adresse HTTPS (ou localhost). Ouvrir index.html directement depuis l'application Fichiers sur iPhone ne permet pas d'activer toutes les fonctions PWA.
+
+DÉMARRAGE SIMPLE
+1. Décompresser le ZIP.
+2. Publier les fichiers sur un hébergement statique HTTPS (par exemple un espace de test que tu contrôles).
+3. Ouvrir l'adresse HTTPS sur iPhone et ordinateur.
+4. Sur iPhone : Safari > bouton Partager > Sur l'écran d'accueil.
+5. Sur ordinateur : utiliser le navigateur ; l'installation peut être proposée selon le navigateur.
+
+DONNÉES ET LIMITES
+- Les demandes sont stockées dans localStorage du navigateur. Elles ne se synchronisent pas entre l'iPhone et l'ordinateur.
+- Le cache hors connexion conserve les fichiers de l'application, pas une base de données partagée.
+- Les agences sont des données fictives de démonstration.
+- Ne pas utiliser de données bancaires, personnelles ou confidentielles.
+- Aucun compte utilisateur, serveur, base de données partagée, gestion sécurisée des pièces jointes ou authentification n'est inclus.
+- Pour une utilisation réelle, il faudra une base de données, une authentification, des droits d'accès, des sauvegardes et un hébergement approuvé par l'organisation.
