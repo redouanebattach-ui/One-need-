@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172b4d">
+<title>ONE NEED — Espace Service métier</title>
+<style>
+:root{--navy:#172b4d;--blue:#223d67;--bg:#f3f6fb;--line:#dce3ed;--muted:#65748b;--ink:#202a3b;--green:#e7f6ed;--amber:#fff5df}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}.brand{background:var(--navy);color:white;padding:22px 20px}.brand h1{margin:0;font-size:26px;letter-spacing:1px}.brand p{margin:5px 0 0;color:#c7d2e3}.wrap{max-width:1000px;margin:auto;padding:18px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.pill{border-radius:30px;background:#e5ecf8;color:var(--navy);padding:8px 13px;font-weight:700}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;margin-bottom:16px;box-shadow:0 2px 8px #172b4d08}.muted{color:var(--muted)}h2{font-size:27px;margin:0 0 8px}h3{margin:0 0 8px;font-size:18px}.btn{border:1px solid var(--line);border-radius:12px;padding:12px 15px;background:white;color:var(--navy);font-weight:700}.btn.primary{background:var(--navy);color:white;border-color:var(--navy)}.btn:disabled{opacity:.5;cursor:not-allowed}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{margin:14px 0}.field label{display:block;font-weight:700;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;border:1px solid #cfd8e6;border-radius:11px;padding:12px;background:white;color:var(--ink)}.field textarea{min-height:84px;resize:vertical}.filters{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px}.request{border:1px solid var(--line);border-radius:14px;padding:15px;margin-top:12px}.request-head{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}.tag{font-size:12px;font-weight:700;background:#edf1f7;color:#344867;border-radius:20px;padding:5px 9px}.agency{border:1px solid var(--line);border-radius:12px;padding:14px;margin-top:10px}.agency-top{display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}.notice{background:var(--amber);border:1px solid #f1dfb3;color:#7d5c22;padding:13px;border-radius:12px;font-size:14px;line-height:1.45}.success{background:var(--green);color:#206b3b;padding:12px;border-radius:10px;margin:12px 0}.empty{padding:22px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}.hidden{display:none!important}.small{font-size:13px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+@media(max-width:650px){.grid,.filters{grid-template-columns:1fr}.wrap{padding:13px}.card{padding:16px}.brand{padding:19px 16px}h2{font-size:24px}.top{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="brand"><h1>ONE NEED</h1><p>Un besoin, un suivi, une réalisation.</p></header>
+<main class="wrap">
+  <div class="top"><div><div class="muted">ONE NEED / ESPACE DE TRAITEMENT</div><h2>Réalisations par agence</h2><div class="muted">Service métier · Consultation multi-domaines</div></div><span class="pill">Service métier</span></div>
+  <div class="notice">Maquette de test : les modifications sont enregistrées uniquement dans ce navigateur. Cette page n’est pas encore connectée à une base de données partagée ni à une authentification sécurisée.</div>
+  <section class="card">
+    <h3>Rechercher les besoins</h3>
+    <div class="filters">
+      <div class="field"><label for="search">Référence, type ou agence</label><input id="search" placeholder="Ex. ON-2026-0005"></div>
+      <div class="field"><label for="domain">Domaine</label><select id="domain"><option value="">Tous les domaines</option><option>Logistique</option><option>Informatique</option><option>Sécurité</option><option>Archives</option></select></div>
+      <div class="field"><label for="status">Statut global</label><select id="status"><option value="">Tous les statuts</option><option>Soumis</option><option>En cours de traitement</option><option>Partiellement réalisé</option><option>Réalisé / Clôturé</option></select></div>
+    </div>
+    <div id="list"></div>
+  </section>
+  <section class="card hidden" id="detail">
+    <div class="top"><div><div class="muted" id="crumb">Détail du besoin</div><h2 id="detailTitle">Besoin</h2></div><button class="btn" id="closeDetail">Fermer</button></div>
+    <div id="detailMeta" class="muted"></div>
+    <div class="field"><label for="globalComment">Commentaire général du service métier</label><textarea id="globalComment" placeholder="Commentaire sur le traitement du besoin"></textarea></div>
+    <h3>Suivi de réalisation agence par agence</h3>
+    <p class="muted small">Chaque agence possède son propre statut et sa date de réalisation.</p>
+    <div id="agencyList"></div>
+    <div class="actions"><button class="btn primary" id="saveAll">Enregistrer les réalisations</button><button class="btn" id="markInProgress">Marquer le besoin « En cours de traitement »</button></div>
+    <div id="saveMessage"></div>
+  </section>
+</main>
+<script>
+const KEY="oneNeedServiceRealizationsV1";
+const demo=[
+ {ref:"ON-2026-0001",date:"2026-10-02",domain:"Logistique",project:"Maintenance",type:"Climatisation & Aération",region:"Casablanca",comment:"",agencies:[{code:"0001",name:"Agence Démo — Anfa",status:"Soumis",planned:"",realized:"",comment:""},{code:"0002",name:"Agence Démo — Ain Sebaa",status:"Soumis",planned:"",realized:"",comment:""}]},
+ {ref:"ON-2026-0002",date:"2026-10-03",domain:"Informatique",project:"—",type:"Imprimantes",region:"Rabat",comment:"",agencies:[{code:"0101",name:"Agence Démo — Rabat Centre",status:"En cours de traitement",planned:"",realized:"",comment:""}]},
+ {ref:"ON-2026-0003",date:"2026-10-04",domain:"Logistique",project:"Investissement",type:"Réaménagements Lights",region:"Casablanca",comment:"Test ONE NEED",agencies:[{code:"0001",name:"Agence Démo — Anfa",status:"Soumis",planned:"",realized:"",comment:""}]},
+ {ref:"ON-2026-0004",date:"2026-10-05",domain:"Archives",project:"—",type:"Demande de ramassage pour transfert",region:"Fès",comment:"",agencies:[{code:"0201",name:"Agence Démo — Fès Ville",status:"Réalisé / Clôturé",planned:"2026-10-08",realized:"2026-10-08",comment:"Démonstration"}]},
+ {ref:"ON-2026-0005",date:"2026-10-09",domain:"Logistique",project:"Investissement",type:"Réaménagements Lights",region:"Casablanca",comment:"Test ONE NEED",agencies:[{code:"0001",name:"Agence Démo — Anfa",status:"Soumis",planned:"",realized:"",comment:""}]}
+];
+let records;
+try { records=JSON.parse(localStorage.getItem(KEY)||"null") || demo; } catch(e){records=demo}
+let selected=null;
+function save(){localStorage.setItem(KEY,JSON.stringify(records))}
+function overall(r){const a=r.agencies||[];if(a.length&&a.every(x=>x.status==="Réalisé / Clôturé"))return "Réalisé / Clôturé";if(a.some(x=>x.status==="Réalisé / Clôturé")||a.some(x=>x.status==="Partiellement réalisé"))return "Partiellement réalisé";if(a.some(x=>x.status==="En cours de traitement"))return "En cours de traitement";return r.status||"Soumis"}
+function render(){const q=document.getElementById("search").value.toLowerCase();const d=document.getElementById("domain").value;const s=document.getElementById("status").value;const arr=records.filter(r=>(!q||(r.ref+" "+r.type+" "+r.domain+" "+r.agencies.map(a=>a.name+" "+a.code).join(" ")).toLowerCase().includes(q))&&(!d||r.domain===d)&&(!s||overall(r)===s));const el=document.getElementById("list");if(!arr.length){el.innerHTML='<div class="empty">Aucun besoin ne correspond aux filtres.</div>';return}el.innerHTML=arr.map(r=>`<div class="request"><div class="request-head"><div><strong>${r.ref}</strong><div class="muted small">${r.domain} · ${r.type}</div><div class="muted small">${r.region||"Région non précisée"} · ${(r.agencies||[]).length} agence(s)</div></div><div><span class="tag">${overall(r)}</span><div class="actions"><button class="btn primary" data-open="${r.ref}">Ouvrir le besoin</button></div></div></div></div>`).join("");el.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>openDetail(b.dataset.open)))}
+function openDetail(ref){selected=records.find(r=>r.ref===ref);if(!selected)return;document.getElementById("detail").classList.remove("hidden");document.getElementById("detailTitle").textContent=selected.ref;document.getElementById("crumb").textContent=selected.domain+" / "+selected.type;document.getElementById("detailMeta").textContent=`Créé le ${selected.date} · Région : ${selected.region||"—"} · Projet : ${selected.project||"—"} · Statut global : ${overall(selected)}`;document.getElementById("globalComment").value=selected.serviceComment||"";const host=document.getElementById("agencyList");host.innerHTML=(selected.agencies||[]).map((a,i)=>`<div class="agency" data-agency="${i}"><div class="agency-top"><strong>${a.code} — ${a.name}</strong><span class="tag">${a.status||"Soumis"}</span></div><div class="grid"><div class="field"><label>Statut de réalisation</label><select data-field="status"><option ${a.status==="Soumis"?"selected":""}>Soumis</option><option ${a.status==="En cours de traitement"?"selected":""}>En cours de traitement</option><option ${a.status==="Partiellement réalisé"?"selected":""}>Partiellement réalisé</option><option ${a.status==="Réalisé / Clôturé"?"selected":""}>Réalisé / Clôturé</option></select></div><div class="field"><label>Date prévisionnelle</label><input data-field="planned" type="date" value="${a.planned||""}"></div><div class="field"><label>Date de réalisation</label><input data-field="realized" type="date" value="${a.realized||""}"></div><div class="field"><label>Commentaire agence</label><input data-field="comment" value="${(a.comment||"").replace(/"/g,"&quot;")}" placeholder="Ex. intervention terminée"></div></div></div>`).join("")||'<div class="empty">Aucune agence n’est associée à ce besoin.</div>';document.getElementById("saveMessage").innerHTML="";document.getElementById("detail").scrollIntoView({behavior:"smooth",block:"start"})}
+function collect(){if(!selected)return;document.querySelectorAll("[data-agency]").forEach(box=>{const a=selected.agencies[Number(box.dataset.agency)];box.querySelectorAll("[data-field]").forEach(f=>a[f.dataset.field]=f.value)});selected.serviceComment=document.getElementById("globalComment").value;selected.status=overall(selected);save();render()}
+document.getElementById("search").addEventListener("input",render);document.getElementById("domain").addEventListener("change",render);document.getElementById("status").addEventListener("change",render);document.getElementById("closeDetail").addEventListener("click",()=>document.getElementById("detail").classList.add("hidden"));document.getElementById("saveAll").addEventListener("click",()=>{collect();document.getElementById("saveMessage").innerHTML='<div class="success">Réalisations enregistrées dans ce navigateur. Le statut global a été recalculé.</div>';document.getElementById("detailMeta").textContent=`Créé le ${selected.date} · Région : ${selected.region||"—"} · Projet : ${selected.project||"—"} · Statut global : ${overall(selected)}`;});document.getElementById("markInProgress").addEventListener("click",()=>{if(!selected)return;selected.agencies.forEach(a=>{if(a.status==="Soumis")a.status="En cours de traitement"});collect();openDetail(selected.ref);document.getElementById("saveMessage").innerHTML='<div class="success">Le besoin est passé en cours de traitement.</div>'});
+render();
+</script>
+</body>
+</html>
